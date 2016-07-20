@@ -1,0 +1,24 @@
+.category__wrapper {
+  display: flex;
+  clear: both;
+
+  @media (max-width: $screen-sm) {
+    display: block;
+  }
+}
+
+.category {
+  padding: 30px 10px;
+  flex: 33%;
+}
+
+h3.category__title {
+  margin-top: 0;
+  font-weight: bolder;
+  text-align: center;
+}
+
+p.category__description {
+  text-align: center;
+  font-style: italic;
+}

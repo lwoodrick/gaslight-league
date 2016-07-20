@@ -1,0 +1,64 @@
+# Table of all of the Groups
+
+teams:
+  - name: Squirtle Squad
+    color: blue
+  - name: Bulbasaur Bunch
+    color: green
+  - name: Charmander Club
+    color: red
+  - name: Pikachu Posse
+    color: yellow
+
+trainer:
+    - name: Lauren
+      handle: MGLolo
+      team: Squirtle Squad
+      initial_stats:
+        num_caught: 64
+        km_walked: 41.75
+        battles_won: 20
+        magikarp_candy: 47
+        lure_modules: 0
+        eggs_hatched: 17
+      comp_stats:
+        num_caught: 72
+        km_walked: 41.75
+        battles_won: 20
+        magikarp_candy: 47
+        lure_modules: 0
+        eggs_hatched: 19
+    - name: Kenny
+      handle: MGLolo
+      team: Bulbasaur Bunch
+      initial_stats:
+        num_caught: 64
+        km_walked: 41.75
+        battles_won: 20
+        magikarp_candy: 47
+        lure_modules: 0
+        eggs_hatched: 17
+      comp_stats:
+        num_caught: 98
+        km_walked: 41.75
+        battles_won: 20
+        magikarp_candy: 47
+        lure_modules: 0
+        eggs_hatched: 32
+    - name: Patrick
+      handle: MGLolo
+      team: Bulbasaur Bunch
+      initial_stats:
+        num_caught: 64
+        km_walked: 41.75
+        battles_won: 20
+        magikarp_candy: 47
+        lure_modules: 0
+        eggs_hatched: 17
+      comp_stats:
+        num_caught: 67
+        km_walked: 41.75
+        battles_won: 20
+        magikarp_candy: 47
+        lure_modules: 0
+        eggs_hatched: 46
