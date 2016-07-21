@@ -1,11 +1,15 @@
 header {
   padding: 20px;
-  background-color: #f7d719;
   background-image: url('../images/pokemonleague_alt.svg');
   // background-repeat: no-repeat;
   background-position: center;
   background-size: auto 80px;
   background-blend-mode: lighten;
+
+  &.green {background-color: #58aa44; color: #fff;}
+  &.blue {background-color: #0b89af; color: #fff;}
+  &.red {background-color: #c91f1f; color: #fff;}
+  &.yellow {background-color: #f4be27; color: #333;}
 }
 
 .logo {
@@ -20,11 +24,19 @@ header {
   text-transform: uppercase;
 }
 
+.contest-logo {
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
 section {
   background-color: white;
+  padding: 30px 0 45px 0;
 
   &> .container {
     max-width: 1170px;
+    width: 100%;
   }
 
   &.category > .container {
@@ -41,15 +53,21 @@ section {
 
     &+ p {
       text-align: center;
+      margin-bottom: 3em;
     }
   }
+}
+
+[class*="col-"] > .container {
+  width: 100%;
+  padding: 0;
 }
 
 .container {
   width: 100%;
 }
 
-body > section:nth-child(odd) {
+body > section:nth-child(even) {
   background-color: #efefef;
 }
 
@@ -60,4 +78,39 @@ footer {
 ul {
   list-style-type: none;
   padding-left: 0;
+}
+
+.team-list {
+  text-align: center;
+}
+
+.team-list__item {
+  margin-top: 5px;
+
+  &:first-child {
+    margin-top: 15px;
+  }
+}
+
+.small-ranking__container {
+  display: block;
+  transition: all 0.1 ease-in;
+}
+.large-ranking__container {
+  display: none;
+  transition: all 0.1 ease-in;
+}
+
+#rank-toggle {
+
+  &.open {
+    .small-ranking__container {
+      display: none;
+      transition: all 0.1 ease-in;
+    }
+    .large-ranking__container {
+      display: block;
+      transition: all 0.1 ease-in;
+    }
+  }
 }

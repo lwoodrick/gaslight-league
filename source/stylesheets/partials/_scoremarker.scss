@@ -1,3 +1,10 @@
+.green {color: #58aa44;}
+.blue {color: #0b89af;}
+.red {color: #c91f1f;}
+.yellow {color: #f4be27;}
+.light {color: #aaa;}
+
+
 .scoremarker {
   position: relative;
   margin: 0 auto 10px auto;
@@ -8,7 +15,21 @@
     margin-bottom: 20px;
   }
 
+  &__score {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 5rem;
+    font-weight: bolder;
+  }
+
+  &__metric {
+    display: inline-block;
+    float: right;
+  }
+
   &.blue {
+    color: #fff;
     background-color: #0b89af;
     & .scoremarker__team-label:before {
       display: inline-block;
@@ -26,6 +47,7 @@
     }
   }
   &.yellow {
+    color: #fff;
     background-color: #f4be27;
     & .scoremarker__team-label:before {
       display: inline-block;
@@ -43,6 +65,7 @@
     }
   }
   &.red {
+    color: #fff;
     background-color: #c91f1f;
     & .scoremarker__team-label:before {
       display: inline-block;
@@ -60,6 +83,7 @@
     }
   }
   &.green {
+    color: #fff;
     background-color: #58aa44;
     & .scoremarker__team-label:before {
       display: inline-block;

@@ -1,25 +1,115 @@
+<% # <Casual Ruby-ing because I'm a monster
+  catch_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.num_caught - a.initial_stats.num_caught)]}
+  km_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.km_walked - a.initial_stats.km_walked)]}
+  battle_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.battles_won - a.initial_stats.battles_won)]}
+  magikarp_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.magikarp_candy - a.initial_stats.magikarp_candy)]}
+  lure_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.lure_modules - a.initial_stats.lure_modules)]}
+  egg_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.eggs_hatched - a.initial_stats.eggs_hatched)]}
+
+  catch_shortlist = catch_ranking.first(3)
+  km_shortlist = km_ranking.first(3)
+  battle_shortlist = battle_ranking.first(3)
+  magikarp_shortlist = magikarp_ranking.first(3)
+  lure_shortlist = lure_ranking.first(3)
+  egg_shortlist = egg_ranking.first(3)
+
+  master_shortlist = [catch_shortlist, km_shortlist, battle_shortlist, magikarp_shortlist, lure_shortlist, egg_shortlist]
+
+  squirtle_score = 0
+  bulbasaur_score = 0
+  pikachu_score = 0
+  charmander_score = 0
+
+  # Scoring Loop
+
+  for i in 0..5
+    points = 15
+    for j in 0..2
+      if master_shortlist[i][j].team == "Squirtle Squad"
+        squirtle_score = squirtle_score + points
+        points = points - 5
+      elsif master_shortlist[i][j].team == "Bulbasaur Bunch"
+        bulbasaur_score = bulbasaur_score + points
+        points = points - 5
+      elsif master_shortlist[i][j].team == "Charmander Club"
+        charmander_score = charmander_score + points
+        points = points - 5
+      else
+        pikachu_score = pikachu_score + points
+        points = points - 5
+      end
+    end
+  end
+
+%>
+<!-- End Casual Rubying -->
+
 <section id="teams">
   <div class="container">
     <div class="col-xs-12">
-      <h2>Teams</h2>
+      <h2>Scoreboard</h2>
       <p>Here's some copy talking about the contest and how it works, ey-yoooo&mdash;</p>
       <div class="container">
-        <% data.trainers.teams.each do |team| %>
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="scoremarker__row">
-              <div class="<%= team.color %> scoremarker">
-                <h4 class="scoremarker__team-label"><%= team.name %></h4>
-              </div>
-              <ul>
-                <% data.trainers.trainer.each do |trainer| %>
-                  <% if trainer.team == team.name %>
-                    <li><%= trainer.name %> (<%= trainer.handle %>)</li>
-                  <% end %>
-                <% end %>
-              </ul>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="scoremarker__row">
+            <span class="scoremarker__score blue"><%= squirtle_score %></span>
+            <div class="blue scoremarker">
+              <h4 class="scoremarker__team-label">Squirtle Squad</h4>
             </div>
+            <ul class="team-list">
+              <% data.trainers.trainer.each do |trainer| %>
+                <% if trainer.team == "Squirtle Squad" %>
+                  <li class="team-list__item"><strong><%= trainer.name %></strong> <span class="light">(<%= trainer.handle %>)</span></li>
+                <% end %>
+              <% end %>
+            </ul>
           </div>
-        <% end %>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="scoremarker__row">
+            <span class="scoremarker__score red"><%= charmander_score %></span>
+            <div class="red scoremarker">
+              <h4 class="scoremarker__team-label">Charmander Club</h4>
+            </div>
+            <ul class="team-list">
+              <% data.trainers.trainer.each do |trainer| %>
+                <% if trainer.team == "Charmander Club" %>
+                  <li class="team-list__item"><strong><%= trainer.name %></strong> <span class="light">(<%= trainer.handle %>)</span></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="scoremarker__row">
+            <span class="scoremarker__score green"><%= bulbasaur_score %></span>
+            <div class="green scoremarker">
+              <h4 class="scoremarker__team-label">Bulbasaur Bunch</h4>
+            </div>
+            <ul class="team-list">
+              <% data.trainers.trainer.each do |trainer| %>
+                <% if trainer.team == "Bulbasaur Bunch" %>
+                  <li class="team-list__item"><strong><%= trainer.name %></strong> <span class="light">(<%= trainer.handle %>)</span></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="scoremarker__row">
+            <span class="scoremarker__score yellow"><%= pikachu_score %></span>
+            <div class="yellow scoremarker">
+              <h4 class="scoremarker__team-label">Pikachu Posse</h4>
+            </div>
+            <ul class="team-list">
+              <% data.trainers.trainer.each do |trainer| %>
+                <% if trainer.team == "Pikachu Posse" %>
+                  <li class="team-list__item"><strong><%= trainer.name %></strong> <span class="light">(<%= trainer.handle %>)</span></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -5,103 +5,169 @@
   magikarp_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.magikarp_candy - a.initial_stats.magikarp_candy)]}
   lure_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.lure_modules - a.initial_stats.lure_modules)]}
   egg_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.eggs_hatched - a.initial_stats.eggs_hatched)]}
+  unique_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.unique_pokemon - a.initial_stats.unique_pokemon)]}
+  evolution_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.pokemon_evolved - a.initial_stats.pokemon_evolved)]}
+
+  catch_shortlist = catch_ranking.first(3)
+  km_shortlist = km_ranking.first(3)
+  battle_shortlist = battle_ranking.first(3)
+  magikarp_shortlist = magikarp_ranking.first(3)
+  lure_shortlist = lure_ranking.first(3)
+  egg_shortlist = egg_ranking.first(3)
+  unique_shortlist = lure_ranking.first(3)
+  evolution_shortlist = egg_ranking.first(3)
+
+  master_shortlist = [catch_shortlist, km_shortlist, battle_shortlist, magikarp_shortlist, lure_shortlist, egg_shortlist, evolution_shortlist, unique_shortlist]
+
+  squirtle_score = 0
+  bulbasaur_score = 0
+  pikachu_score = 0
+  charmander_score = 0
+
+  # Scoring Loop
+
+  for i in 0..5
+    points = 15
+    for j in 0..2
+      if master_shortlist[i][j].team == "Squirtle Squad"
+        squirtle_score = squirtle_score + points
+        points = points - 5
+      elsif master_shortlist[i][j].team == "Bulbasaur Bunch"
+        bulbasaur_score = bulbasaur_score + points
+        points = points - 5
+      elsif master_shortlist[i][j].team == "Charmander Club"
+        charmander_score = charmander_score + points
+        points = points - 5
+      else
+        pikachu_score = pikachu_score + points
+        points = points - 5
+      end
+    end
+  end
+
 %>
 <!-- End Casual Rubying -->
 
-<section id="categories">
- <div class="container">
-   <div class="col-xs-12">
-     <h2>Categories</h2>
-     <p>Here's some copy talking about the contest and how it works, ey-yoooo&mdash;</p>
-   </div>
-
-   <div class="category__wrapper">
-     <section class="category col-md-4 col-sm-12" id="category-community_organizer">
-       <div class="container">
-         <div class="col-xs-12">
-           <h3 class="category__title">Community Organizer</h3>
-           <p class="category__description">Set down the most Lure Modules at the Pok&eacute;stop nearest Gaslight's office</p>
-           <ul>
-           <% lure_ranking.each do |trainer| %>
-               <li><%= trainer.name %> <%= trainer.comp_stats.lure_modules - trainer.initial_stats.lure_modules %> (<%= trainer.handle %>)</li>
-           <% end %>
-           </ul>
-         </div>
+<div class="category__wrapper">
+ <section class="category col-md-4 col-sm-12" id="category-community_organizer">
+   <h3 class="category__title">Community Organizer</h3>
+   <p class="category__description">Set down the most Lure Modules at the Pok&eacute;stop nearest Gaslight's office</p>
+   <ul class="contest-rankings">
+   <% lure_shortlist.each do |trainer| %>
+     <% if trainer.team == "Squirtle Squad" %>
+       <div class="blue scoremarker">
+     <% elsif trainer.team == "Bulbasaur Bunch" %>
+       <div class="green scoremarker">
+     <% elsif trainer.team == "Charmander Club" %>
+       <div class="red scoremarker">
+     <% else %>
+        <div class="yellow scoremarker">
+     <% end %>
+         <h4 class="scoremarker__team-label"><%= trainer.name %> <span class="scoremarker__metric"><%= trainer.comp_stats.lure_modules - trainer.initial_stats.lure_modules %></span></h4>
        </div>
-     </section>
+   <% end %>
+   </ul>
+ </section>
 
-     <section class="category col-md-4 col-sm-12" id="category-collector">
-       <div class="container">
-         <div class="col-xs-12">
-           <h3 class="category__title">Collector</h3>
-           <p class="category__description">Has the highest number of Pok&eacute;mon in their Pok&eacute;dex</p>
-           <ul>
-           <% catch_ranking.each do |trainer| %>
-               <li><%= trainer.name %> <%= trainer.comp_stats.num_caught - trainer.initial_stats.num_caught %> (<%= trainer.handle %>)</li>
-           <% end %>
-           </ul>
-         </div>
+ <section class="category col-md-4 col-sm-12" id="category-collector">
+   <h3 class="category__title">Collector</h3>
+   <p class="category__description">Has the highest number of Pok&eacute;mon in their Pok&eacute;dex</p>
+   <ul class="contest-rankings">
+   <% catch_shortlist.each do |trainer| %>
+     <% if trainer.team == "Squirtle Squad" %>
+       <div class="blue scoremarker">
+     <% elsif trainer.team == "Bulbasaur Bunch" %>
+       <div class="green scoremarker">
+     <% elsif trainer.team == "Charmander Club" %>
+       <div class="red scoremarker">
+     <% else %>
+        <div class="yellow scoremarker">
+     <% end %>
+         <h4 class="scoremarker__team-label"><%= trainer.name %> <span class="scoremarker__metric"><%= trainer.comp_stats.num_caught - trainer.initial_stats.num_caught %></span></h4>
        </div>
-     </section>
+   <% end %>
+   </ul>
+ </section>
 
-     <section class="category col-md-4 col-sm-12" id="category-distance">
-       <div class="container">
-         <div class="col-xs-12">
-           <h3 class="category__title">Going the Distance</h3>
-           <p class="category__description">Has the most walking clocked to their Pokemon Go app</p>
-           <ul>
-           <% km_ranking.each do |trainer| %>
-               <li><%= trainer.name %> <%= trainer.comp_stats.km_walked - trainer.initial_stats.km_walked %> (<%= trainer.handle %>)</li>
-           <% end %>
-           </ul>
-         </div>
+ <section class="category col-md-4 col-sm-12" id="category-distance">
+   <h3 class="category__title">Going the Distance</h3>
+   <p class="category__description">Has the most walking clocked to their Pokemon Go app</p>
+   <ul class="contest-rankings">
+   <% km_shortlist.each do |trainer| %>
+     <% if trainer.team == "Squirtle Squad" %>
+       <div class="blue scoremarker">
+     <% elsif trainer.team == "Bulbasaur Bunch" %>
+       <div class="green scoremarker">
+     <% elsif trainer.team == "Charmander Club" %>
+       <div class="red scoremarker">
+     <% else %>
+        <div class="yellow scoremarker">
+     <% end %>
+         <h4 class="scoremarker__team-label"><%= trainer.name %> <span class="scoremarker__metric"><%= trainer.comp_stats.km_walked - trainer.initial_stats.km_walked %></span></h4>
        </div>
-     </section>
+   <% end %>
+   </ul>
+ </section>
 
-   </div>
-   <div class="category__wrapper">
-     <section class="category col-md-4 col-sm-12" id="category-magikarp">
-       <div class="container">
-         <div class="col-xs-12">
-           <h3 class="category__title">More Fish in the Sea</h3>
-           <p class="category__description">Has the highest number of Magikarp candies (you'll get to Gyarados eventually)</p>
-           <ul>
-           <% magikarp_ranking.each do |trainer| %>
-               <li><%= trainer.name %> <%= trainer.comp_stats.magikarp_candy - trainer.initial_stats.magikarp_candy %> (<%= trainer.handle %>)</li>
-           <% end %>
-           </ul>
-         </div>
+</div>
+<div class="category__wrapper">
+ <section class="category col-md-4 col-sm-12" id="category-magikarp">
+   <h3 class="category__title">More Fish in the Sea</h3>
+   <p class="category__description">Has the highest number of Magikarp candies (you'll get to Gyarados eventually)</p>
+   <ul class="contest-rankings">
+   <% magikarp_shortlist.each do |trainer| %>
+     <% if trainer.team == "Squirtle Squad" %>
+       <div class="blue scoremarker">
+     <% elsif trainer.team == "Bulbasaur Bunch" %>
+       <div class="green scoremarker">
+     <% elsif trainer.team == "Charmander Club" %>
+       <div class="red scoremarker">
+     <% else %>
+        <div class="yellow scoremarker">
+     <% end %>
+         <h4 class="scoremarker__team-label"><%= trainer.name %> <span class="scoremarker__metric"><%= trainer.comp_stats.magikarp_candy - trainer.initial_stats.magikarp_candy %></span></h4>
        </div>
-     </section>
+   <% end %>
+ </section>
 
 
-     <section class="category col-md-4 col-sm-12" id="category-eggs">
-       <div class="container">
-         <div class="col-xs-12">
-           <h3 class="category__title">Gotta Hatch 'Em All</h3>
-           <p class="category__description">Has hatched the most eggs</p>
-           <ul>
-           <% egg_ranking.each do |trainer| %>
-               <li><%= trainer.name %> <%= trainer.comp_stats.eggs_hatched - trainer.initial_stats.eggs_hatched %> (<%= trainer.handle %>)</li>
-           <% end %>
-           </ul>
-         </div>
+ <section class="category col-md-4 col-sm-12" id="category-eggs">
+   <h3 class="category__title">Gotta Hatch 'Em All</h3>
+   <p class="category__description">Has hatched the most eggs<br/></p>
+   <ul class="contest-rankings">
+   <% egg_shortlist.each do |trainer| %>
+     <% if trainer.team == "Squirtle Squad" %>
+       <div class="blue scoremarker">
+     <% elsif trainer.team == "Bulbasaur Bunch" %>
+       <div class="green scoremarker">
+     <% elsif trainer.team == "Charmander Club" %>
+       <div class="red scoremarker">
+     <% else %>
+        <div class="yellow scoremarker">
+     <% end %>
+         <h4 class="scoremarker__team-label"><%= trainer.name %> <span class="scoremarker__metric"><%= trainer.comp_stats.eggs_hatched - trainer.initial_stats.eggs_hatched %></span></h4>
        </div>
-     </section>
+   <% end %>
+   </ul>
+ </section>
 
-     <section class="category col-md-4 col-sm-12" id="category-gyms">
-       <div class="container">
-         <div class="col-xs-12">
-           <h3 class="category__title">Gym Rat</h3>
-           <p class="category__description">Has won battles and trained the most times in a gym</p>
-           <ul>
-           <% battle_ranking.each do |trainer| %>
-               <li><%= trainer.name %> <%= trainer.comp_stats.battles_won - trainer.initial_stats.battles_won %> (<%= trainer.handle %>)</li>
-           <% end %>
-           </ul>
-         </div>
+ <section class="category col-md-4 col-sm-12" id="category-gyms">
+   <h3 class="category__title">Gym Rat</h3>
+   <p class="category__description">Has won battles and trained the most times in a gym</p>
+   <ul class="contest-rankings">
+   <% battle_shortlist.each do |trainer| %>
+     <% if trainer.team == "Squirtle Squad" %>
+       <div class="blue scoremarker">
+     <% elsif trainer.team == "Bulbasaur Bunch" %>
+       <div class="green scoremarker">
+     <% elsif trainer.team == "Charmander Club" %>
+       <div class="red scoremarker">
+     <% else %>
+        <div class="yellow scoremarker">
+     <% end %>
+         <h4 class="scoremarker__team-label"><%= trainer.name %> <span class="scoremarker__metric"><%= trainer.comp_stats.battles_won - trainer.initial_stats.battles_won %></span></h4>
        </div>
-     </section>
-   </div>
- </div>
-</section>
+   <% end %>
+   </ul>
+ </section>
+</div>
