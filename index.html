@@ -7,7 +7,7 @@
 
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>Gaslight League</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link href="stylesheets/site.css" rel="stylesheet" />
     <script src="javascripts/all.js"></script>
   </head>
@@ -29,7 +29,10 @@
   <div class="container">
     <div class="col-xs-12">
       <h2>Welcome Trainers!</h2>
-      <p class="rules">Here's some copy talking about the contest and how it works, ey-yoooo&mdash;</p>
+      <p class="rules" style="margin-bottom: 20px;">
+        Scores will be updated at the end of each work day.<br/>
+        Enter your updated metrics in the <a href="https://docs.google.com/a/gaslight.co/spreadsheets/d/1YFTyfYoaTzJQI5RQI0et02u3eo5QCht3K0gExtqqAQ8/edit?usp=sharing">Daily Stats Spreadsheet</a>!
+      </p>
     </div>
   </div>
 </section>
@@ -39,8 +42,7 @@
 <section id="teams">
   <div class="container">
     <div class="col-xs-12">
-      <h2>Scoreboard</h2>
-      <p>Here's some copy talking about the contest and how it works, ey-yoooo&mdash;</p>
+      <h2 style="margin-bottom: 20px;">Scoreboard</h2>
       <div class="container">
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="scoremarker__row">
@@ -95,20 +97,19 @@
 <section id="categories">
   <div class="container">
     <div class="col-xs-12">
-      <h2>Categories</h2>
-      <p>Here's some copy talking about the contest and how it works, ey-yoooo&mdash;</p>
+      <h2 style="margin-bottom: 20px;">Categories</h2>
     </div>
     <div id="rank-toggle">
-      <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-primary active">
-          <input type="radio" name="options" id="large-ranking" autocomplete="off"> Top 3
-        </label>
-        <label class="btn btn-primary">
-          <input type="radio" name="options" id="small-ranking" autocomplete="off" checked> Full List
-        </label>
+      <div class="toggle-box">
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-primary active" for="small-ranking">
+            <input type="radio" name="options" id="small-ranking" autocomplete="off"> Top 3
+          </label>
+          <label class="btn btn-primary" for="large-ranking">
+            <input type="radio" name="options" id="large-ranking" autocomplete="off" checked> Full List
+          </label>
+        </div>
       </div>
-
-      <!-- <button class="btn" id="small-ranking"></button><button class="btn" id="large-ranking"></button> -->
       <div class="small-ranking__container">
         <!-- End Casual Rubying -->
 
@@ -134,13 +135,13 @@
    <p class="category__description">Has the highest number of Pok&eacute;mon in their Pok&eacute;dex</p>
    <ul class="contest-rankings">
        <div class="green scoremarker">
-         <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">34</span></h4>
+         <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">0</span></h4>
        </div>
        <div class="blue scoremarker">
-         <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">8</span></h4>
+         <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">0</span></h4>
        </div>
         <div class="yellow scoremarker">
-         <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">3</span></h4>
+         <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">0</span></h4>
        </div>
    </ul>
  </section>
@@ -212,139 +213,214 @@
  </section>
 </div>
 
+<div class="category__wrapper category__wrapper--two-item">
+  <section class="category col-md-4 col-sm-12" id="category-catch">
+    <h3 class="category__title">Hoarder</h3>
+    <p class="category__description">Has caught the most Pok&eacute;mon</p>
+    <ul class="contest-rankings">
+        <div class="green scoremarker">
+          <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">34</span></h4>
+        </div>
+        <div class="blue scoremarker">
+          <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">8</span></h4>
+        </div>
+         <div class="yellow scoremarker">
+          <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">3</span></h4>
+        </div>
+    </ul>
+  </section>
+
+  <section class="category col-md-4 col-sm-12" id="category-evolution">
+    <h3 class="category__title">Biologist</h3>
+    <p class="category__description">Has evolved the most Pok&eacute;mon</p>
+    <ul class="contest-rankings">
+        <div class="red scoremarker">
+          <h4 class="scoremarker__team-label">James <span class="scoremarker__metric">0</span></h4>
+        </div>
+         <div class="yellow scoremarker">
+          <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">0</span></h4>
+        </div>
+        <div class="green scoremarker">
+          <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">0</span></h4>
+        </div>
+    </ul>
+  </section>
+</div>
+
       </div>
       <div class="large-ranking__container">
         <!-- End Casual Rubying -->
 
- <div class="category__wrapper">
-   <section class="category col-md-4 col-sm-12" id="category-community_organizer">
-     <h3 class="category__title">Community Organizer</h3>
-     <p class="category__description">Set down the most Lure Modules at the Pok&eacute;stop nearest Gaslight's office</p>
-     <ul class="contest-rankings">
-         <div class="blue scoremarker">
-           <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">0</span></h4>
-         </div>
-         <div class="green scoremarker">
-           <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">0</span></h4>
-         </div>
-          <div class="yellow scoremarker">
-           <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">0</span></h4>
-         </div>
-         <div class="red scoremarker">
-           <h4 class="scoremarker__team-label">James <span class="scoremarker__metric">0</span></h4>
-         </div>
-     </ul>
-   </section>
+<div class="category__wrapper">
+ <section class="category col-md-4 col-sm-12" id="category-community_organizer">
+   <h3 class="category__title">Community Organizer</h3>
+   <p class="category__description">Set down the most Lure Modules at the Pok&eacute;stop nearest Gaslight's office</p>
+   <ul class="contest-rankings">
+       <div class="blue scoremarker">
+         <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">0</span></h4>
+       </div>
+       <div class="green scoremarker">
+         <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">0</span></h4>
+       </div>
+        <div class="yellow scoremarker">
+         <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">0</span></h4>
+       </div>
+       <div class="red scoremarker">
+         <h4 class="scoremarker__team-label">James <span class="scoremarker__metric">0</span></h4>
+       </div>
+   </ul>
+ </section>
 
-   <section class="category col-md-4 col-sm-12" id="category-collector">
-     <h3 class="category__title">Collector</h3>
-     <p class="category__description">Has the highest number of Pok&eacute;mon in their Pok&eacute;dex</p>
-     <ul class="contest-rankings">
-         <div class="green scoremarker">
-           <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">34</span></h4>
-         </div>
-         <div class="blue scoremarker">
-           <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">8</span></h4>
-         </div>
-          <div class="yellow scoremarker">
-           <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">3</span></h4>
-         </div>
-         <div class="red scoremarker">
-           <h4 class="scoremarker__team-label">James <span class="scoremarker__metric">3</span></h4>
-         </div>
-     </ul>
-   </section>
+ <section class="category col-md-4 col-sm-12" id="category-collector">
+   <h3 class="category__title">Collector</h3>
+   <p class="category__description">Has the highest number of Pok&eacute;mon in their Pok&eacute;dex</p>
+   <ul class="contest-rankings">
+       <div class="green scoremarker">
+         <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">0</span></h4>
+       </div>
+       <div class="blue scoremarker">
+         <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">0</span></h4>
+       </div>
+        <div class="yellow scoremarker">
+         <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">0</span></h4>
+       </div>
+       <div class="red scoremarker">
+         <h4 class="scoremarker__team-label">James <span class="scoremarker__metric">0</span></h4>
+       </div>
+   </ul>
+ </section>
 
-   <section class="category col-md-4 col-sm-12" id="category-distance">
-     <h3 class="category__title">Going the Distance</h3>
-     <p class="category__description">Has the most walking clocked to their Pokemon Go app</p>
-     <ul class="contest-rankings">
-         <div class="blue scoremarker">
-           <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">0.0</span></h4>
-         </div>
-         <div class="green scoremarker">
-           <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">0.0</span></h4>
-         </div>
-          <div class="yellow scoremarker">
-           <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">0.0</span></h4>
-         </div>
-         <div class="red scoremarker">
-           <h4 class="scoremarker__team-label">James <span class="scoremarker__metric">0.0</span></h4>
-         </div>
-     </ul>
-   </section>
+ <section class="category col-md-4 col-sm-12" id="category-distance">
+   <h3 class="category__title">Going the Distance</h3>
+   <p class="category__description">Has the most walking clocked to their Pokemon Go app</p>
+   <ul class="contest-rankings">
+       <div class="blue scoremarker">
+         <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">0.0</span></h4>
+       </div>
+       <div class="green scoremarker">
+         <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">0.0</span></h4>
+       </div>
+        <div class="yellow scoremarker">
+         <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">0.0</span></h4>
+       </div>
+       <div class="red scoremarker">
+         <h4 class="scoremarker__team-label">James <span class="scoremarker__metric">0.0</span></h4>
+       </div>
+   </ul>
+ </section>
 
- </div>
- <div class="category__wrapper">
-   <section class="category col-md-4 col-sm-12" id="category-magikarp">
-     <h3 class="category__title">More Fish in the Sea</h3>
-     <p class="category__description">Has the highest number of Magikarp candies (you'll get to Gyarados eventually)</p>
-     <ul class="contest-rankings">
-         <div class="blue scoremarker">
-           <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">0</span></h4>
-         </div>
-         <div class="green scoremarker">
-           <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">0</span></h4>
-         </div>
-          <div class="yellow scoremarker">
-           <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">0</span></h4>
-         </div>
-         <div class="red scoremarker">
-           <h4 class="scoremarker__team-label">James <span class="scoremarker__metric">0</span></h4>
-         </div>
-   </section>
+</div>
+<div class="category__wrapper">
+ <section class="category col-md-4 col-sm-12" id="category-magikarp">
+   <h3 class="category__title">More Fish in the Sea</h3>
+   <p class="category__description">Has the highest number of Magikarp candies (you'll get to Gyarados eventually)</p>
+   <ul class="contest-rankings">
+       <div class="blue scoremarker">
+         <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">0</span></h4>
+       </div>
+       <div class="green scoremarker">
+         <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">0</span></h4>
+       </div>
+        <div class="yellow scoremarker">
+         <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">0</span></h4>
+       </div>
+       <div class="red scoremarker">
+         <h4 class="scoremarker__team-label">James <span class="scoremarker__metric">0</span></h4>
+       </div>
+ </section>
 
 
-   <section class="category col-md-4 col-sm-12" id="category-eggs">
-     <h3 class="category__title">Gotta Hatch 'Em All</h3>
-     <p class="category__description">Has hatched the most eggs<br/></p>
-     <ul class="contest-rankings">
-         <div class="red scoremarker">
-           <h4 class="scoremarker__team-label">James <span class="scoremarker__metric">29</span></h4>
-         </div>
-          <div class="yellow scoremarker">
-           <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">29</span></h4>
-         </div>
-         <div class="green scoremarker">
-           <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">15</span></h4>
-         </div>
-         <div class="blue scoremarker">
-           <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">2</span></h4>
-         </div>
-     </ul>
-   </section>
+ <section class="category col-md-4 col-sm-12" id="category-eggs">
+   <h3 class="category__title">Gotta Hatch 'Em All</h3>
+   <p class="category__description">Has hatched the most eggs<br/></p>
+   <ul class="contest-rankings">
+       <div class="red scoremarker">
+         <h4 class="scoremarker__team-label">James <span class="scoremarker__metric">29</span></h4>
+       </div>
+        <div class="yellow scoremarker">
+         <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">29</span></h4>
+       </div>
+       <div class="green scoremarker">
+         <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">15</span></h4>
+       </div>
+       <div class="blue scoremarker">
+         <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">2</span></h4>
+       </div>
+   </ul>
+ </section>
 
-   <section class="category col-md-4 col-sm-12" id="category-gyms">
-     <h3 class="category__title">Gym Rat</h3>
-     <p class="category__description">Has won battles and trained the most times in a gym</p>
-     <ul class="contest-rankings">
-         <div class="blue scoremarker">
-           <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">0</span></h4>
-         </div>
-         <div class="green scoremarker">
-           <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">0</span></h4>
-         </div>
-          <div class="yellow scoremarker">
-           <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">0</span></h4>
-         </div>
-         <div class="red scoremarker">
-           <h4 class="scoremarker__team-label">James <span class="scoremarker__metric">0</span></h4>
-         </div>
-     </ul>
-   </section>
- </div>
+ <section class="category col-md-4 col-sm-12" id="category-gyms">
+   <h3 class="category__title">Gym Rat</h3>
+   <p class="category__description">Has won battles and trained the most times in a gym</p>
+   <ul class="contest-rankings">
+       <div class="blue scoremarker">
+         <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">0</span></h4>
+       </div>
+       <div class="green scoremarker">
+         <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">0</span></h4>
+       </div>
+        <div class="yellow scoremarker">
+         <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">0</span></h4>
+       </div>
+       <div class="red scoremarker">
+         <h4 class="scoremarker__team-label">James <span class="scoremarker__metric">0</span></h4>
+       </div>
+   </ul>
+ </section>
+</div>
+
+<div class="category__wrapper category__wrapper--two-item">
+  <section class="category col-md-4 col-sm-12" id="category-catch">
+    <h3 class="category__title">Hoarder</h3>
+    <p class="category__description">Has caught the most Pok&eacute;mon</p>
+    <ul class="contest-rankings">
+        <div class="green scoremarker">
+          <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">34</span></h4>
+        </div>
+        <div class="blue scoremarker">
+          <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">8</span></h4>
+        </div>
+         <div class="yellow scoremarker">
+          <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">3</span></h4>
+        </div>
+        <div class="red scoremarker">
+          <h4 class="scoremarker__team-label">James <span class="scoremarker__metric">3</span></h4>
+        </div>
+    </ul>
+  </section>
+
+  <section class="category col-md-4 col-sm-12" id="category-evolution">
+    <h3 class="category__title">Biologist</h3>
+    <p class="category__description">Has evolved the most Pok&eacute;mon</p>
+    <ul class="contest-rankings">
+        <div class="blue scoremarker">
+          <h4 class="scoremarker__team-label">Lauren <span class="scoremarker__metric">0</span></h4>
+        </div>
+        <div class="green scoremarker">
+          <h4 class="scoremarker__team-label">Kenny <span class="scoremarker__metric">0</span></h4>
+        </div>
+         <div class="yellow scoremarker">
+          <h4 class="scoremarker__team-label">Patrick <span class="scoremarker__metric">0</span></h4>
+        </div>
+        <div class="red scoremarker">
+          <h4 class="scoremarker__team-label">James <span class="scoremarker__metric">0</span></h4>
+        </div>
+    </ul>
+  </section>
+</div>
 
       </div>
     </div>
   </div>
 </section>
 
-<!-- <footer>
+<footer>
   <div class="container">
     <div class="col-md-6 col-md-offset-3 col-sm-9 col-sm-offsest-2 col-xs-10 col-xs-offset-1">
+      <p style="color: white; text-align: center; font-style: italic; padding: 30px 0 20px 0;">Lovingly crafted by <a href="github.com/lwoodrick">Lauren</a>.</p>
     </div>
   </div>
-</footer> -->
+</footer>
 
   </body>
 </html>

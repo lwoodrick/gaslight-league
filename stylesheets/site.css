@@ -443,84 +443,96 @@ header {
 
 /* line 27, _layout.scss */
 .contest-logo {
-  max-width: 400px;
+  max-width: 250px;
   display: block;
   margin: 0 auto; }
+  @media (max-width: 480px) {
+    /* line 27, _layout.scss */
+    .contest-logo {
+      width: 33vw; } }
 
-/* line 33, _layout.scss */
+/* line 37, _layout.scss */
 section {
   background-color: white;
   padding: 30px 0 45px 0; }
-  /* line 37, _layout.scss */
+  /* line 41, _layout.scss */
   section > .container {
     max-width: 1170px;
     width: 100%; }
-  /* line 42, _layout.scss */
+  /* line 46, _layout.scss */
   section.category > .container {
     width: auto; }
-  /* line 46, _layout.scss */
+  /* line 50, _layout.scss */
   section.category .container {
     width: auto; }
-  /* line 50, _layout.scss */
+  /* line 54, _layout.scss */
   section h2 {
     font-size: 2.5em;
     text-align: center; }
-    /* line 54, _layout.scss */
+    /* line 58, _layout.scss */
     section h2 + p {
       text-align: center;
       margin-bottom: 3em; }
 
-/* line 61, _layout.scss */
+/* line 65, _layout.scss */
 [class*="col-"] > .container {
   width: 100%;
   padding: 0; }
 
-/* line 66, _layout.scss */
+/* line 70, _layout.scss */
 .container {
   width: 100%; }
 
-/* line 70, _layout.scss */
+/* line 74, _layout.scss */
 body > section:nth-child(even) {
   background-color: #efefef; }
 
-/* line 74, _layout.scss */
+/* line 78, _layout.scss */
 footer {
   background-color: #444; }
 
-/* line 78, _layout.scss */
+/* line 82, _layout.scss */
 ul {
   list-style-type: none;
   padding-left: 0; }
 
-/* line 83, _layout.scss */
+/* line 87, _layout.scss */
 .team-list {
   text-align: center; }
 
-/* line 87, _layout.scss */
+/* line 91, _layout.scss */
 .team-list__item {
   margin-top: 5px; }
-  /* line 90, _layout.scss */
+  /* line 94, _layout.scss */
   .team-list__item:first-child {
     margin-top: 15px; }
 
-/* line 95, _layout.scss */
+/* line 99, _layout.scss */
 .small-ranking__container {
   display: block;
   transition: all 0.1 ease-in; }
 
-/* line 99, _layout.scss */
+/* line 103, _layout.scss */
 .large-ranking__container {
   display: none;
   transition: all 0.1 ease-in; }
 
-/* line 107, _layout.scss */
+/* line 111, _layout.scss */
 #rank-toggle.open .small-ranking__container {
   display: none;
   transition: all 0.1 ease-in; }
-/* line 111, _layout.scss */
+/* line 115, _layout.scss */
 #rank-toggle.open .large-ranking__container {
   display: block;
   transition: all 0.1 ease-in; }
+
+/* line 122, _layout.scss */
+.toggle-box {
+  clear: both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2em; }
 
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
@@ -1932,11 +1944,11 @@ textarea {
 
 /* line 48, bootstrap/_scaffolding.scss */
 a {
-  color: #337ab7;
+  color: #888;
   text-decoration: none; }
   /* line 52, bootstrap/_scaffolding.scss */
   a:hover, a:focus {
-    color: #23527c;
+    color: #626262;
     text-decoration: underline; }
   /* line 58, bootstrap/_scaffolding.scss */
   a:focus {
@@ -2161,12 +2173,12 @@ mark,
 
 /* line 5, bootstrap/mixins/_text-emphasis.scss */
 .text-primary {
-  color: #337ab7; }
+  color: #888; }
 
 /* line 8, bootstrap/mixins/_text-emphasis.scss */
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #286090; }
+  color: #6f6f6f; }
 
 /* line 5, bootstrap/mixins/_text-emphasis.scss */
 .text-success {
@@ -2210,12 +2222,12 @@ a.text-danger:focus {
 
 /* line 5, bootstrap/mixins/_background-variant.scss */
 .bg-primary {
-  background-color: #337ab7; }
+  background-color: #888; }
 
 /* line 8, bootstrap/mixins/_background-variant.scss */
 a.bg-primary:hover,
 a.bg-primary:focus {
-  background-color: #286090; }
+  background-color: #6f6f6f; }
 
 /* line 5, bootstrap/mixins/_background-variant.scss */
 .bg-success {
@@ -4245,38 +4257,38 @@ a.btn.disabled, fieldset[disabled] a.btn {
 /* line 71, bootstrap/_buttons.scss */
 .btn-primary {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4; }
+  background-color: #888;
+  border-color: #7b7b7b; }
   /* line 11, bootstrap/mixins/_buttons.scss */
   .btn-primary:focus, .btn-primary.focus {
     color: #fff;
-    background-color: #286090;
-    border-color: #122b40; }
+    background-color: #6f6f6f;
+    border-color: #3c3c3c; }
   /* line 17, bootstrap/mixins/_buttons.scss */
   .btn-primary:hover {
     color: #fff;
-    background-color: #286090;
-    border-color: #204d74; }
+    background-color: #6f6f6f;
+    border-color: #5d5d5d; }
   /* line 22, bootstrap/mixins/_buttons.scss */
   .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #286090;
-    border-color: #204d74; }
+    background-color: #6f6f6f;
+    border-color: #5d5d5d; }
     /* line 29, bootstrap/mixins/_buttons.scss */
     .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus, .open > .btn-primary.dropdown-toggle:hover, .open > .btn-primary.dropdown-toggle:focus, .open > .btn-primary.dropdown-toggle.focus {
       color: #fff;
-      background-color: #204d74;
-      border-color: #122b40; }
+      background-color: #5d5d5d;
+      border-color: #3c3c3c; }
   /* line 37, bootstrap/mixins/_buttons.scss */
   .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
     background-image: none; }
   /* line 45, bootstrap/mixins/_buttons.scss */
   .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary.focus {
-    background-color: #337ab7;
-    border-color: #2e6da4; }
+    background-color: #888;
+    border-color: #7b7b7b; }
   /* line 53, bootstrap/mixins/_buttons.scss */
   .btn-primary .badge {
-    color: #337ab7;
+    color: #888;
     background-color: #fff; }
 
 /* line 75, bootstrap/_buttons.scss */
@@ -4429,7 +4441,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 /* line 96, bootstrap/_buttons.scss */
 .btn-link {
-  color: #337ab7;
+  color: #888;
   font-weight: normal;
   border-radius: 0; }
   /* line 101, bootstrap/_buttons.scss */
@@ -4442,7 +4454,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
     border-color: transparent; }
   /* line 115, bootstrap/_buttons.scss */
   .btn-link:hover, .btn-link:focus {
-    color: #23527c;
+    color: #626262;
     text-decoration: underline;
     background-color: transparent; }
   /* line 123, bootstrap/_buttons.scss */
@@ -4596,7 +4608,7 @@ tbody.collapse.in {
   color: #fff;
   text-decoration: none;
   outline: 0;
-  background-color: #337ab7; }
+  background-color: #888; }
 
 /* line 103, bootstrap/_dropdowns.scss */
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
@@ -5038,7 +5050,7 @@ tbody.collapse.in {
   /* line 46, bootstrap/_navs.scss */
   .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
     background-color: #eeeeee;
-    border-color: #337ab7; }
+    border-color: #888; }
   /* line 59, bootstrap/_navs.scss */
   .nav .nav-divider {
     height: 1px;
@@ -5085,7 +5097,7 @@ tbody.collapse.in {
   /* line 131, bootstrap/_navs.scss */
   .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     color: #fff;
-    background-color: #337ab7; }
+    background-color: #888; }
 
 /* line 144, bootstrap/_navs.scss */
 .nav-stacked > li {
@@ -5700,7 +5712,7 @@ tbody.collapse.in {
       padding: 6px 12px;
       line-height: 1.42857;
       text-decoration: none;
-      color: #337ab7;
+      color: #888;
       background-color: #fff;
       border: 1px solid #ddd;
       margin-left: -1px; }
@@ -5720,7 +5732,7 @@ tbody.collapse.in {
   .pagination > li > span:hover,
   .pagination > li > span:focus {
     z-index: 2;
-    color: #23527c;
+    color: #626262;
     background-color: #eeeeee;
     border-color: #ddd; }
   /* line 52, bootstrap/_pagination.scss */
@@ -5730,8 +5742,8 @@ tbody.collapse.in {
   .pagination > .active > span:focus {
     z-index: 3;
     color: #fff;
-    background-color: #337ab7;
-    border-color: #337ab7;
+    background-color: #888;
+    border-color: #888;
     cursor: default; }
   /* line 64, bootstrap/_pagination.scss */
   .pagination > .disabled > span,
@@ -5860,10 +5872,10 @@ a.label:hover, a.label:focus {
 
 /* line 48, bootstrap/_labels.scss */
 .label-primary {
-  background-color: #337ab7; }
+  background-color: #888; }
   /* line 7, bootstrap/mixins/_labels.scss */
   .label-primary[href]:hover, .label-primary[href]:focus {
-    background-color: #286090; }
+    background-color: #6f6f6f; }
 
 /* line 52, bootstrap/_labels.scss */
 .label-success {
@@ -5920,7 +5932,7 @@ a.label:hover, a.label:focus {
     padding: 1px 5px; }
   /* line 41, bootstrap/_badges.scss */
   .list-group-item.active > .badge, .nav-pills > .active > a > .badge {
-    color: #337ab7;
+    color: #888;
     background-color: #fff; }
   /* line 47, bootstrap/_badges.scss */
   .list-group-item > .badge {
@@ -6008,7 +6020,7 @@ a.badge:hover, a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #337ab7; }
+  border-color: #888; }
 
 /* line 9, bootstrap/_alerts.scss */
 .alert {
@@ -6120,7 +6132,7 @@ a.thumbnail.active {
   line-height: 20px;
   color: #fff;
   text-align: center;
-  background-color: #337ab7;
+  background-color: #888;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -6296,8 +6308,8 @@ button.list-group-item {
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
   z-index: 2;
   color: #fff;
-  background-color: #337ab7;
-  border-color: #337ab7; }
+  background-color: #888;
+  border-color: #888; }
   /* line 96, bootstrap/_list-group.scss */
   .list-group-item.active .list-group-item-heading,
   .list-group-item.active .list-group-item-heading > small,
@@ -6309,7 +6321,7 @@ button.list-group-item {
     color: inherit; }
   /* line 101, bootstrap/_list-group.scss */
   .list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
-    color: #c7ddef; }
+    color: #eeeeee; }
 
 /* line 4, bootstrap/mixins/_list-group.scss */
 .list-group-item-success {
@@ -6706,22 +6718,22 @@ button.list-group-item-danger {
 
 /* line 257, bootstrap/_panels.scss */
 .panel-primary {
-  border-color: #337ab7; }
+  border-color: #888; }
   /* line 6, bootstrap/mixins/_panels.scss */
   .panel-primary > .panel-heading {
     color: #fff;
-    background-color: #337ab7;
-    border-color: #337ab7; }
+    background-color: #888;
+    border-color: #888; }
     /* line 11, bootstrap/mixins/_panels.scss */
     .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-      border-top-color: #337ab7; }
+      border-top-color: #888; }
     /* line 14, bootstrap/mixins/_panels.scss */
     .panel-primary > .panel-heading .badge {
-      color: #337ab7;
+      color: #888;
       background-color: #fff; }
   /* line 20, bootstrap/mixins/_panels.scss */
   .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-    border-bottom-color: #337ab7; }
+    border-bottom-color: #888; }
 
 /* line 260, bootstrap/_panels.scss */
 .panel-success {
@@ -7914,27 +7926,42 @@ button.close {
     .category__wrapper {
       display: block; } }
 
-/* line 10, partials/_category.scss */
+/* line 11, partials/_category.scss */
+.category__wrapper--two-item > section:first-child {
+  padding-left: 16.7%; }
+  @media (max-width: 768px) {
+    /* line 11, partials/_category.scss */
+    .category__wrapper--two-item > section:first-child {
+      padding-left: 30px; } }
+/* line 17, partials/_category.scss */
+.category__wrapper--two-item > section:last-child {
+  padding-right: 16.7%; }
+  @media (max-width: 768px) {
+    /* line 17, partials/_category.scss */
+    .category__wrapper--two-item > section:last-child {
+      padding-right: 30px; } }
+
+/* line 25, partials/_category.scss */
 .category {
   padding: 30px;
   flex: 33%;
   display: flex;
   flex-direction: column; }
 
-/* line 17, partials/_category.scss */
+/* line 32, partials/_category.scss */
 h3.category__title {
   flex: 1;
   margin-top: 0;
   font-weight: bolder;
   text-align: center; }
 
-/* line 24, partials/_category.scss */
+/* line 39, partials/_category.scss */
 p.category__description {
   flex: 2;
   text-align: center;
   font-style: italic; }
 
-/* line 33, partials/_category.scss */
+/* line 48, partials/_category.scss */
 ul.contest-rankings {
   margin-top: 20px; }
 
