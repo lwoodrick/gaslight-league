@@ -7,6 +7,21 @@
   }
 }
 
+.category__wrapper--two-item {
+  & > section:first-child {
+    padding-left: 16.7%;
+    @media (max-width: $screen-sm) {
+      padding-left: 30px;
+    }
+  }
+  & > section:last-child {
+    padding-right: 16.7%;
+    @media (max-width: $screen-sm) {
+      padding-right: 30px;
+    }
+  }
+}
+
 .category {
   padding: 30px;
   flex: 33%;

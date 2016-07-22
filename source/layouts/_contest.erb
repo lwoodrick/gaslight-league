@@ -83,7 +83,7 @@
      <% else %>
         <div class="yellow scoremarker">
      <% end %>
-         <h4 class="scoremarker__team-label"><%= trainer.name %> <span class="scoremarker__metric"><%= trainer.comp_stats.num_caught - trainer.initial_stats.num_caught %></span></h4>
+         <h4 class="scoremarker__team-label"><%= trainer.name %> <span class="scoremarker__metric"><%= trainer.comp_stats.unique_pokemon - trainer.initial_stats.unique_pokemon %></span></h4>
        </div>
    <% end %>
    </ul>
@@ -170,4 +170,46 @@
    <% end %>
    </ul>
  </section>
+</div>
+
+<div class="category__wrapper category__wrapper--two-item">
+  <section class="category col-md-4 col-sm-12" id="category-catch">
+    <h3 class="category__title">Hoarder</h3>
+    <p class="category__description">Has caught the most Pok&eacute;mon</p>
+    <ul class="contest-rankings">
+    <% catch_shortlist.each do |trainer| %>
+      <% if trainer.team == "Squirtle Squad" %>
+        <div class="blue scoremarker">
+      <% elsif trainer.team == "Bulbasaur Bunch" %>
+        <div class="green scoremarker">
+      <% elsif trainer.team == "Charmander Club" %>
+        <div class="red scoremarker">
+      <% else %>
+         <div class="yellow scoremarker">
+      <% end %>
+          <h4 class="scoremarker__team-label"><%= trainer.name %> <span class="scoremarker__metric"><%= trainer.comp_stats.num_caught - trainer.initial_stats.num_caught %></span></h4>
+        </div>
+    <% end %>
+    </ul>
+  </section>
+
+  <section class="category col-md-4 col-sm-12" id="category-evolution">
+    <h3 class="category__title">Biologist</h3>
+    <p class="category__description">Has evolved the most Pok&eacute;mon</p>
+    <ul class="contest-rankings">
+    <% evolution_shortlist.each do |trainer| %>
+      <% if trainer.team == "Squirtle Squad" %>
+        <div class="blue scoremarker">
+      <% elsif trainer.team == "Bulbasaur Bunch" %>
+        <div class="green scoremarker">
+      <% elsif trainer.team == "Charmander Club" %>
+        <div class="red scoremarker">
+      <% else %>
+         <div class="yellow scoremarker">
+      <% end %>
+          <h4 class="scoremarker__team-label"><%= trainer.name %> <span class="scoremarker__metric"><%= trainer.comp_stats.pokemon_evolved - trainer.initial_stats.pokemon_evolved %></span></h4>
+        </div>
+    <% end %>
+    </ul>
+  </section>
 </div>

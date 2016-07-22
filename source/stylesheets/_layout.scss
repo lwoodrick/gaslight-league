@@ -25,9 +25,13 @@ header {
 }
 
 .contest-logo {
-  max-width: 400px;
+  max-width: 250px;
   display: block;
   margin: 0 auto;
+
+  @media (max-width: 480px) {
+    width: 33vw;
+  }
 }
 
 section {
@@ -113,4 +117,12 @@ ul {
       transition: all 0.1 ease-in;
     }
   }
+}
+
+.toggle-box {
+  clear: both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2em;
 }
