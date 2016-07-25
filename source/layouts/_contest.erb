@@ -1,4 +1,5 @@
 <% # <Casual Ruby-ing because I'm a monster
+
   catch_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.num_caught - a.initial_stats.num_caught)]}
   km_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.km_walked - a.initial_stats.km_walked)]}
   battle_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.battles_won - a.initial_stats.battles_won)]}
@@ -14,8 +15,20 @@
   magikarp_shortlist = magikarp_ranking.first(3)
   lure_shortlist = lure_ranking.first(3)
   egg_shortlist = egg_ranking.first(3)
-  unique_shortlist = lure_ranking.first(3)
-  evolution_shortlist = egg_ranking.first(3)
+  unique_shortlist = unique_ranking.first(3)
+  evolution_shortlist = evolution_ranking.first(3)
+
+
+  # catch_tophalf = catch_ranking.first(data.trainers.trainer.length/2)
+  # km_tophalf = km_ranking.first(data.trainers.trainer.length/2)
+  # battle_tophalf = battle_ranking.first(data.trainers.trainer.length/2)
+  # magikarp_tophalf = magikarp_ranking.first(data.trainers.trainer.length/2)
+  # lure_tophalf = lure_ranking.first(data.trainers.trainer.length/2)
+  # egg_tophalf = egg_ranking.first(data.trainers.trainer.length/2)
+  # unique_tophalf = lure_ranking.first(data.trainers.trainer.length/2)
+  # evolution_tophalf = egg_ranking.first(data.trainers.trainer.length/2)
+  #
+  # master_tophalf = [catch_tophalf, km_tophalf, battle_tophalf, magikarp_tophalf, lure_tophalf, egg_tophalf, evolution_tophalf, unique_tophalf]
 
   master_shortlist = [catch_shortlist, km_shortlist, battle_shortlist, magikarp_shortlist, lure_shortlist, egg_shortlist, evolution_shortlist, unique_shortlist]
 
@@ -24,9 +37,9 @@
   pikachu_score = 0
   charmander_score = 0
 
-  # Scoring Loop
+  # Scoring Loop for Placing
 
-  for i in 0..5
+  for i in 0..7
     points = 15
     for j in 0..2
       if master_shortlist[i][j].team == "Squirtle Squad"
@@ -45,8 +58,25 @@
     end
   end
 
+  # Scoring Loop for Top 50%
+
+  # for i in 0..7
+  #   for j in 0..2
+  #     if master_shortlist[i][j].team == "Squirtle Squad"
+  #       squirtle_score = squirtle_score + 3
+  #     elsif master_shortlist[i][j].team == "Bulbasaur Bunch"
+  #       bulbasaur_score = bulbasaur_score + 3
+  #     elsif master_shortlist[i][j].team == "Charmander Club"
+  #       charmander_score = charmander_score + 3
+  #     else
+  #       pikachu_score = pikachu_score + 3
+  #     end
+  #   end
+  # end
+
 %>
 <!-- End Casual Rubying -->
+<!-- Start Debug -->
 
 <div class="category__wrapper">
  <section class="category col-md-4 col-sm-12" id="category-community_organizer">
@@ -73,7 +103,7 @@
    <h3 class="category__title">Collector</h3>
    <p class="category__description">Has the highest number of Pok&eacute;mon in their Pok&eacute;dex</p>
    <ul class="contest-rankings">
-   <% catch_shortlist.each do |trainer| %>
+   <% unique_shortlist.each do |trainer| %>
      <% if trainer.team == "Squirtle Squad" %>
        <div class="blue scoremarker">
      <% elsif trainer.team == "Bulbasaur Bunch" %>
@@ -103,7 +133,7 @@
      <% else %>
         <div class="yellow scoremarker">
      <% end %>
-         <h4 class="scoremarker__team-label"><%= trainer.name %> <span class="scoremarker__metric"><%= trainer.comp_stats.km_walked - trainer.initial_stats.km_walked %></span></h4>
+         <h4 class="scoremarker__team-label"><%= trainer.name %> <span class="scoremarker__metric"><%= (trainer.comp_stats.km_walked - trainer.initial_stats.km_walked).round(2) %></span></h4>
        </div>
    <% end %>
    </ul>

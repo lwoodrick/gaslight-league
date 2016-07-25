@@ -1,10 +1,13 @@
 <% # <Casual Ruby-ing because I'm a monster
+
   catch_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.num_caught - a.initial_stats.num_caught)]}
   km_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.km_walked - a.initial_stats.km_walked)]}
   battle_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.battles_won - a.initial_stats.battles_won)]}
   magikarp_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.magikarp_candy - a.initial_stats.magikarp_candy)]}
   lure_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.lure_modules - a.initial_stats.lure_modules)]}
   egg_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.eggs_hatched - a.initial_stats.eggs_hatched)]}
+  unique_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.unique_pokemon - a.initial_stats.unique_pokemon)]}
+  evolution_ranking = data.trainers.trainer.sort_by {|a| [-(a.comp_stats.pokemon_evolved - a.initial_stats.pokemon_evolved)]}
 
   catch_shortlist = catch_ranking.first(3)
   km_shortlist = km_ranking.first(3)
@@ -12,17 +15,31 @@
   magikarp_shortlist = magikarp_ranking.first(3)
   lure_shortlist = lure_ranking.first(3)
   egg_shortlist = egg_ranking.first(3)
+  unique_shortlist = unique_ranking.first(3)
+  evolution_shortlist = evolution_ranking.first(3)
 
-  master_shortlist = [catch_shortlist, km_shortlist, battle_shortlist, magikarp_shortlist, lure_shortlist, egg_shortlist]
+
+  # catch_tophalf = catch_ranking.first(data.trainers.trainer.length/2)
+  # km_tophalf = km_ranking.first(data.trainers.trainer.length/2)
+  # battle_tophalf = battle_ranking.first(data.trainers.trainer.length/2)
+  # magikarp_tophalf = magikarp_ranking.first(data.trainers.trainer.length/2)
+  # lure_tophalf = lure_ranking.first(data.trainers.trainer.length/2)
+  # egg_tophalf = egg_ranking.first(data.trainers.trainer.length/2)
+  # unique_tophalf = lure_ranking.first(data.trainers.trainer.length/2)
+  # evolution_tophalf = egg_ranking.first(data.trainers.trainer.length/2)
+  #
+  # master_tophalf = [catch_tophalf, km_tophalf, battle_tophalf, magikarp_tophalf, lure_tophalf, egg_tophalf, evolution_tophalf, unique_tophalf]
+
+  master_shortlist = [catch_shortlist, km_shortlist, battle_shortlist, magikarp_shortlist, lure_shortlist, egg_shortlist, evolution_shortlist, unique_shortlist]
 
   squirtle_score = 0
   bulbasaur_score = 0
   pikachu_score = 0
   charmander_score = 0
 
-  # Scoring Loop
+  # Scoring Loop for Placing
 
-  for i in 0..5
+  for i in 0..7
     points = 15
     for j in 0..2
       if master_shortlist[i][j].team == "Squirtle Squad"
@@ -40,6 +57,22 @@
       end
     end
   end
+
+  # Scoring Loop for Top 50%
+
+  # for i in 0..7
+  #   for j in 0..2
+  #     if master_shortlist[i][j].team == "Squirtle Squad"
+  #       squirtle_score = squirtle_score + 3
+  #     elsif master_shortlist[i][j].team == "Bulbasaur Bunch"
+  #       bulbasaur_score = bulbasaur_score + 3
+  #     elsif master_shortlist[i][j].team == "Charmander Club"
+  #       charmander_score = charmander_score + 3
+  #     else
+  #       pikachu_score = pikachu_score + 3
+  #     end
+  #   end
+  # end
 
 %>
 <!-- End Casual Rubying -->
