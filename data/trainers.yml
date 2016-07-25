@@ -11,87 +11,339 @@ teams:
     color: yellow
 
 trainer:
-    - name: Lauren
-      handle: MGLolo
-      team: Squirtle Squad
-      initial_stats:
-        num_caught: 64
-        km_walked: 41.75
-        battles_won: 20
-        magikarp_candy: 47
-        lure_modules: 0
-        eggs_hatched: 17
-        unique_pokemon: 50
-        pokemon_evolved: 25
-      comp_stats:
-        num_caught: 72
-        km_walked: 41.75
-        battles_won: 20
-        magikarp_candy: 47
-        lure_modules: 0
-        eggs_hatched: 19
-        unique_pokemon: 50
-        pokemon_evolved: 25
     - name: Kenny
-      handle: MGLolo
+      handle: slippinmickeys
       team: Bulbasaur Bunch
       initial_stats:
-        num_caught: 64
-        km_walked: 41.75
-        battles_won: 20
-        magikarp_candy: 47
+        num_caught: 798
+        km_walked: 38
+        battles_won: 34
+        magikarp_candy: 31
         lure_modules: 0
-        eggs_hatched: 17
-        unique_pokemon: 50
-        pokemon_evolved: 25
+        eggs_hatched: 21
+        unique_pokemon: 81
+        pokemon_evolved: 89
       comp_stats:
-        num_caught: 98
-        km_walked: 41.75
-        battles_won: 20
-        magikarp_candy: 47
+        num_caught: 900
+        km_walked: 43.2
+        battles_won: 65
+        magikarp_candy: 39
         lure_modules: 0
-        eggs_hatched: 32
-        unique_pokemon: 50
-        pokemon_evolved: 25
-    - name: Patrick
-      handle: Handle
-      team: Pikachu Posse
+        eggs_hatched: 25
+        unique_pokemon: 81
+        pokemon_evolved: 89
+    - name: Joel
+      handle: JoelbyWan
+      team: Bulbasaur Bunch
       initial_stats:
-        num_caught: 64
-        km_walked: 41.75
-        battles_won: 20
-        magikarp_candy: 47
+        num_caught: 26
+        km_walked: 1.17
+        battles_won: 0
+        magikarp_candy: 3
         lure_modules: 0
-        eggs_hatched: 17
-        unique_pokemon: 50
-        pokemon_evolved: 25
+        eggs_hatched: 0
+        unique_pokemon: 12
+        pokemon_evolved: 0
       comp_stats:
-        num_caught: 67
-        km_walked: 41.75
-        battles_won: 20
-        magikarp_candy: 47
+        num_caught: 26
+        km_walked: 1.17
+        battles_won: 0
+        magikarp_candy: 3
         lure_modules: 0
-        eggs_hatched: 46
-        unique_pokemon: 50
-        pokemon_evolved: 25
-    - name: James
-      handle: Handle
+        eggs_hatched: 0
+        unique_pokemon: 12
+        pokemon_evolved: 0
+    - name: Lauren
+      handle: MGLolo
       team: Charmander Club
       initial_stats:
-        num_caught: 64
-        km_walked: 41.75
-        battles_won: 20
-        magikarp_candy: 47
+        num_caught: 526
+        km_walked: 47.12
+        battles_won: 21
+        magikarp_candy: 53
         lure_modules: 0
-        eggs_hatched: 17
-        unique_pokemon: 50
-        pokemon_evolved: 25
+        eggs_hatched: 19
+        unique_pokemon: 65
+        pokemon_evolved: 28
       comp_stats:
-        num_caught: 67
-        km_walked: 41.75
-        battles_won: 20
-        magikarp_candy: 47
+        num_caught: 559
+        km_walked: 50.2
+        battles_won: 33
+        magikarp_candy: 53
         lure_modules: 0
-        eggs_hatched: 46
-        unique_pokemon: 50
-        pokemon_evolved: 25
+        eggs_hatched: 19
+        unique_pokemon: 65
+        pokemon_evolved: 28
+    - name: James S.
+      handle: st23am
+      team: Charmander Club
+      initial_stats:
+        num_caught: 403
+        km_walked: 24.58
+        battles_won: 26
+        magikarp_candy: 9
+        lure_modules: 0
+        eggs_hatched: 10
+        unique_pokemon: 55
+        pokemon_evolved: 23
+      comp_stats:
+        num_caught: 435
+        km_walked: 25.03
+        battles_won: 26
+        magikarp_candy: 9
+        lure_modules: 0
+        eggs_hatched: 12
+        unique_pokemon: 55
+        pokemon_evolved: 23
+    - name: Tim
+      handle: tmecklem
+      team: Charmander Club
+      initial_stats:
+        num_caught: 0
+        km_walked: 0
+        battles_won: 0
+        magikarp_candy: 0
+        lure_modules: 0
+        eggs_hatched: 0
+        unique_pokemon: 0
+        pokemon_evolved: 0
+      comp_stats:
+        num_caught: 114
+        km_walked: 13.3
+        battles_won: 0
+        magikarp_candy: 15
+        lure_modules: 0
+        eggs_hatched: 4
+        unique_pokemon: 36
+        pokemon_evolved: 7
+    - name: Tyler
+      handle: TySh1
+      team: Charmander Club
+      initial_stats:
+        num_caught: 43
+        km_walked: 6.15
+        battles_won: 0
+        magikarp_candy: 0
+        lure_modules: 0
+        eggs_hatched: 2
+        unique_pokemon: 18
+        pokemon_evolved: 0
+      comp_stats:
+        num_caught: 162
+        km_walked: 12.6
+        battles_won: 3
+        magikarp_candy: 0
+        lure_modules: 0
+        eggs_hatched: 4
+        unique_pokemon: 34
+        pokemon_evolved: 0
+    - name: Ben
+      handle: DreadParrot
+      team: Charmander Club
+      initial_stats:
+        num_caught: 0
+        km_walked: 0
+        battles_won: 0
+        magikarp_candy: 0
+        lure_modules: 0
+        eggs_hatched: 0
+        unique_pokemon: 0
+        pokemon_evolved: 0
+      comp_stats:
+        num_caught: 0
+        km_walked: 0
+        battles_won: 0
+        magikarp_candy: 0
+        lure_modules: 0
+        eggs_hatched: 0
+        unique_pokemon: 0
+        pokemon_evolved: 0
+    - name: Katie
+      handle: KatiePohlman
+      team: Pikachu Posse
+      initial_stats:
+        num_caught: 577
+        km_walked: 25.12
+        battles_won: 4
+        magikarp_candy: 27
+        lure_modules: 0
+        eggs_hatched: 14
+        unique_pokemon: 59
+        pokemon_evolved: 12
+      comp_stats:
+        num_caught: 628
+        km_walked: 28.65
+        battles_won: 4
+        magikarp_candy: 27
+        lure_modules: 1
+        eggs_hatched: 16
+        unique_pokemon: 63
+        pokemon_evolved: 12
+    - name: Ryan
+      handle: Slyran
+      team: Pikachu Posse
+      initial_stats:
+        num_caught: 790
+        km_walked: 41.88
+        battles_won: 14
+        magikarp_candy: 21
+        lure_modules: 0
+        eggs_hatched: 24
+        unique_pokemon: 76
+        pokemon_evolved: 77
+      comp_stats:
+        num_caught: 991
+        km_walked: 57.5
+        battles_won: 25
+        magikarp_candy: 52
+        lure_modules: 2
+        eggs_hatched: 37
+        unique_pokemon: 81
+        pokemon_evolved: 96
+    - name: Haley
+      handle: Haleyrbmoore
+      team: Pikachu Posse
+      initial_stats:
+        num_caught: 0
+        km_walked: 0
+        battles_won: 0
+        magikarp_candy: 0
+        lure_modules: 0
+        eggs_hatched: 0
+        unique_pokemon: 0
+        pokemon_evolved: 0
+      comp_stats:
+        num_caught: 43
+        km_walked: 2.66
+        battles_won: 0
+        magikarp_candy: 0
+        lure_modules: 0
+        eggs_hatched: 0
+        unique_pokemon: 13
+        pokemon_evolved: 0
+    - name: Patrick
+      handle: phildebrandt
+      team: Pikachu Posse
+      initial_stats:
+        num_caught: 410
+        km_walked: 18.89
+        battles_won: 0
+        magikarp_candy: 13
+        lure_modules: 0
+        eggs_hatched: 8
+        unique_pokemon: 53
+        pokemon_evolved: 21
+      comp_stats:
+        num_caught: 435
+        km_walked: 22.01
+        battles_won: 0
+        magikarp_candy: 13
+        lure_modules: 0
+        eggs_hatched: 10
+        unique_pokemon: 59
+        pokemon_evolved: 47
+    - name: Michelle
+      handle: CityHounds
+      team: Pikachu Posse
+      initial_stats:
+        num_caught: 84
+        km_walked: 12.15
+        battles_won: 0
+        magikarp_candy: 10
+        lure_modules: 0
+        eggs_hatched: 3
+        unique_pokemon: 36
+        pokemon_evolved: 4
+      comp_stats:
+        num_caught: 104
+        km_walked: 12.6
+        battles_won: 0
+        magikarp_candy: 10
+        lure_modules: 0
+        eggs_hatched: 3
+        unique_pokemon: 37
+        pokemon_evolved: 4
+    - name: Doug
+      handle: GreyWatyr
+      team: Squirtle Squad
+      initial_stats:
+        num_caught: 528
+        km_walked: 44.61
+        battles_won: 22
+        magikarp_candy: 23
+        lure_modules: 0
+        eggs_hatched: 22
+        unique_pokemon: 71
+        pokemon_evolved: 64
+      comp_stats:
+        num_caught: 632
+        km_walked: 46.5
+        battles_won: 22
+        magikarp_candy: 23
+        lure_modules: 0
+        eggs_hatched: 22
+        unique_pokemon: 74
+        pokemon_evolved: 64
+    - name: Alex P.
+      handle: apcomplete
+      team: Squirtle Squad
+      initial_stats:
+        num_caught: 499
+        km_walked: 22.07
+        battles_won: 0
+        magikarp_candy: 3
+        lure_modules: 0
+        eggs_hatched: 12
+        unique_pokemon: 65
+        pokemon_evolved: 33
+      comp_stats:
+        num_caught: 583
+        km_walked: 24.89
+        battles_won: 0
+        magikarp_candy: 6
+        lure_modules: 1
+        eggs_hatched: 12
+        unique_pokemon: 66
+        pokemon_evolved: 37
+    - name: Kat
+      handle: katzenbarosu
+      team: Squirtle Squad
+      initial_stats:
+        num_caught: 380
+        km_walked: 18.2
+        battles_won: 12
+        magikarp_candy: 18
+        lure_modules: 2
+        eggs_hatched: 10
+        unique_pokemon: 61
+        pokemon_evolved: 13
+      comp_stats:
+        num_caught: 391
+        km_walked: 18.9
+        battles_won: 16
+        magikarp_candy: 18
+        lure_modules: 2
+        eggs_hatched: 10
+        unique_pokemon: 61
+        pokemon_evolved: 13
+    - name: James T.
+      handle: Pokemonnewbie14
+      team: Squirtle Squad
+      initial_stats:
+        num_caught: 0
+        km_walked: 0
+        battles_won: 0
+        magikarp_candy: 0
+        lure_modules: 0
+        eggs_hatched: 0
+        unique_pokemon: 0
+        pokemon_evolved: 0
+      comp_stats:
+        num_caught: 111
+        km_walked: 5.32
+        battles_won: 0
+        magikarp_candy: 0
+        lure_modules: 0
+        eggs_hatched: 0
+        unique_pokemon: 26
+        pokemon_evolved: 8

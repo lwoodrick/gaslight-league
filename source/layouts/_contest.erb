@@ -19,16 +19,16 @@
   evolution_shortlist = evolution_ranking.first(3)
 
 
-  # catch_tophalf = catch_ranking.first(data.trainers.trainer.length/2)
-  # km_tophalf = km_ranking.first(data.trainers.trainer.length/2)
-  # battle_tophalf = battle_ranking.first(data.trainers.trainer.length/2)
-  # magikarp_tophalf = magikarp_ranking.first(data.trainers.trainer.length/2)
-  # lure_tophalf = lure_ranking.first(data.trainers.trainer.length/2)
-  # egg_tophalf = egg_ranking.first(data.trainers.trainer.length/2)
-  # unique_tophalf = lure_ranking.first(data.trainers.trainer.length/2)
-  # evolution_tophalf = egg_ranking.first(data.trainers.trainer.length/2)
-  #
-  # master_tophalf = [catch_tophalf, km_tophalf, battle_tophalf, magikarp_tophalf, lure_tophalf, egg_tophalf, evolution_tophalf, unique_tophalf]
+  catch_tophalf = catch_ranking.first(data.trainers.trainer.length/2)
+  km_tophalf = km_ranking.first(data.trainers.trainer.length/2)
+  battle_tophalf = battle_ranking.first(data.trainers.trainer.length/2)
+  magikarp_tophalf = magikarp_ranking.first(data.trainers.trainer.length/2)
+  lure_tophalf = lure_ranking.first(data.trainers.trainer.length/2)
+  egg_tophalf = egg_ranking.first(data.trainers.trainer.length/2)
+  unique_tophalf = lure_ranking.first(data.trainers.trainer.length/2)
+  evolution_tophalf = egg_ranking.first(data.trainers.trainer.length/2)
+
+  master_tophalf = [catch_tophalf, km_tophalf, battle_tophalf, magikarp_tophalf, lure_tophalf, egg_tophalf, evolution_tophalf, unique_tophalf]
 
   master_shortlist = [catch_shortlist, km_shortlist, battle_shortlist, magikarp_shortlist, lure_shortlist, egg_shortlist, evolution_shortlist, unique_shortlist]
 
@@ -77,6 +77,10 @@
 %>
 <!-- End Casual Rubying -->
 <!-- Start Debug -->
+
+<!-- <div class="panel">
+  <%= catch_tophalf %>
+</div> -->
 
 <div class="category__wrapper">
  <section class="category col-md-4 col-sm-12" id="category-community_organizer">
