@@ -19,16 +19,75 @@
   evolution_shortlist = evolution_ranking.first(3)
 
 
-  # catch_tophalf = catch_ranking.first(data.trainers.trainer.length/2)
-  # km_tophalf = km_ranking.first(data.trainers.trainer.length/2)
-  # battle_tophalf = battle_ranking.first(data.trainers.trainer.length/2)
-  # magikarp_tophalf = magikarp_ranking.first(data.trainers.trainer.length/2)
-  # lure_tophalf = lure_ranking.first(data.trainers.trainer.length/2)
-  # egg_tophalf = egg_ranking.first(data.trainers.trainer.length/2)
-  # unique_tophalf = lure_ranking.first(data.trainers.trainer.length/2)
-  # evolution_tophalf = egg_ranking.first(data.trainers.trainer.length/2)
-  #
-  # master_tophalf = [catch_tophalf, km_tophalf, battle_tophalf, magikarp_tophalf, lure_tophalf, egg_tophalf, evolution_tophalf, unique_tophalf]
+  catch_tophalf = catch_ranking.first(data.trainers.trainer.length/2)
+  km_tophalf = km_ranking.first(data.trainers.trainer.length/2)
+  battle_tophalf = battle_ranking.first(data.trainers.trainer.length/2)
+  magikarp_tophalf = magikarp_ranking.first(data.trainers.trainer.length/2)
+  lure_tophalf = lure_ranking.first(data.trainers.trainer.length/2)
+  egg_tophalf = egg_ranking.first(data.trainers.trainer.length/2)
+  unique_tophalf = unique_ranking.first(data.trainers.trainer.length/2)
+  evolution_tophalf = evolution_ranking.first(data.trainers.trainer.length/2)
+
+  # Loops for cuttin' out slackers.
+
+  for i in 0..(catch_tophalf.length - 1)
+    if (catch_tophalf[i].comp_stats.num_caught - catch_tophalf[i].initial_stats.num_caught == 0)
+      catch_tophalf = catch_tophalf.slice(0,i)
+      break
+    end
+  end
+
+  for i in 0..(km_tophalf.length - 1)
+    if (km_tophalf[i].comp_stats.km_walked - km_tophalf[i].initial_stats.km_walked == 0)
+      km_tophalf = km_tophalf.slice(0,i)
+      break
+    end
+  end
+
+  for i in 0..(battle_tophalf.length - 1)
+    if (battle_tophalf[i].comp_stats.battles_won - battle_tophalf[i].initial_stats.battles_won == 0)
+      battle_tophalf = battle_tophalf.slice(0,i)
+      break
+    end
+  end
+
+  for i in 0..(magikarp_tophalf.length - 1)
+    if (magikarp_tophalf[i].comp_stats.magikarp_candy - magikarp_tophalf[i].initial_stats.magikarp_candy == 0)
+      magikarp_tophalf = magikarp_tophalf.slice(0,i)
+      break
+    end
+  end
+
+  for i in 0..(egg_tophalf.length - 1)
+    if (egg_tophalf[i].comp_stats.eggs_hatched - egg_tophalf[i].initial_stats.eggs_hatched == 0)
+      egg_tophalf = egg_tophalf.slice(0,i)
+      break
+    end
+  end
+
+  for i in 0..(unique_tophalf.length - 1)
+    if (unique_tophalf[i].comp_stats.unique_pokemon - unique_tophalf[i].initial_stats.unique_pokemon == 0)
+      unique_tophalf = unique_tophalf.slice(0,i)
+      break
+    end
+  end
+
+  for i in 0..(evolution_tophalf.length - 1)
+    if (evolution_tophalf[i].comp_stats.pokemon_evolved - evolution_tophalf[i].initial_stats.pokemon_evolved == 0)
+      evolution_tophalf = evolution_tophalf.slice(0,i)
+      break
+    end
+  end
+
+  for i in 0..(lure_tophalf.length - 1)
+    if (lure_tophalf[i].comp_stats.lure_modules - lure_tophalf[i].initial_stats.lure_modules == 0)
+      lure_tophalf = lure_tophalf.slice(0,i)
+      break
+    end
+  end
+
+
+  master_tophalf = [catch_tophalf, km_tophalf, battle_tophalf, magikarp_tophalf, lure_tophalf, egg_tophalf, evolution_tophalf, unique_tophalf]
 
   master_shortlist = [catch_shortlist, km_shortlist, battle_shortlist, magikarp_shortlist, lure_shortlist, egg_shortlist, evolution_shortlist, unique_shortlist]
 
@@ -60,19 +119,19 @@
 
   # Scoring Loop for Top 50%
 
-  # for i in 0..7
-  #   for j in 0..2
-  #     if master_shortlist[i][j].team == "Squirtle Squad"
-  #       squirtle_score = squirtle_score + 3
-  #     elsif master_shortlist[i][j].team == "Bulbasaur Bunch"
-  #       bulbasaur_score = bulbasaur_score + 3
-  #     elsif master_shortlist[i][j].team == "Charmander Club"
-  #       charmander_score = charmander_score + 3
-  #     else
-  #       pikachu_score = pikachu_score + 3
-  #     end
-  #   end
-  # end
+  for i in 0..(master_tophalf.length - 1)
+    for j in 0..(master_tophalf[i].length - 1)
+      if master_tophalf[i][j].team == "Squirtle Squad"
+        squirtle_score = squirtle_score + 3
+      elsif master_tophalf[i][j].team == "Bulbasaur Bunch"
+        bulbasaur_score = bulbasaur_score + 3
+      elsif master_tophalf[i][j].team == "Charmander Club"
+        charmander_score = charmander_score + 3
+      else
+        pikachu_score = pikachu_score + 3
+      end
+    end
+  end
 
 %>
 <!-- End Casual Rubying -->
